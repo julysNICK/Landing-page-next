@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export":"next export",
+    "export": "next export",
     "storybook": "start-storybook -p 6006",
+    "deploy-static": "npm run build && npm run export",
     "build-storybook": "build-storybook",
     "test": "jest"
   },

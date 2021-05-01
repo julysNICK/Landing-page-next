@@ -1,5 +1,5 @@
 import P from 'prop-types';
-import { loadPages } from '../api/load-pages';
+import { LoadPages } from '../api/load-pages';
 import Home from '../templates/Home';
 
 export default function Page({ data }) {
@@ -11,16 +11,16 @@ Page.propTypes = {
 };
 
 //export const getStaticPaths = async () => {
-//  const paths = (await loadPages()).map((page) => {
-//   return {
-//     params: {
-//       slug: page.slug,
-//      },
+// const paths = (await LoadPages()).map((page) => {
+//  return {
+//    params: {
+//      slug: page.slug,
+//    },
 //   };
-//  });
+// });
 
 // return {
-//  paths,
+//   paths,
 // fallback: false,
 // };
 //};
@@ -29,7 +29,7 @@ export const getServerSideProps = async (ctx) => {
   let data = null;
 
   try {
-    data = await loadPages(ctx.params.slug);
+    data = await LoadPages(ctx.params.slug);
   } catch (e) {
     data = null;
   }
