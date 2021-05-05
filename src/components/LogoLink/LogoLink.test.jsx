@@ -12,7 +12,22 @@ describe('<LogoLink />', () => {
       '#target',
     );
   });
+  it('should render render internal link', () => {
+    renderTheme(
+      <LogoLink link="/target" text="Olá mundo" srcImg="image.jpg" />,
+    );
+    expect(screen.getByAltText('Olá mundo')).toHaveAttribute(
+      'src',
+      'image.jpg',
+    );
+  });
 
+  it('should render render internal link with text only', () => {
+    renderTheme(<LogoLink link="/target" text="Olá mundo" />);
+    expect(
+      screen.getByRole('heading', { name: 'Olá mundo' }),
+    ).toBeInTheDocument();
+  });
   it('should  render text logo', () => {
     renderTheme(
       <LogoLink link="#target" text="olá mundo" srcImg="image.jpg" />,
