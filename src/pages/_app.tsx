@@ -1,3 +1,4 @@
+const a = 'ss';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 import { AppProps } from 'next/app';
